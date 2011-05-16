@@ -5,6 +5,7 @@ use Symfony\Component\ClassLoader\UniversalClassLoader;
 $loader = new UniversalClassLoader();
 $loader->registerNamespaces(array(
     'Symfony'                          => array(__DIR__.'/../vendor/symfony/src', __DIR__.'/../vendor/bundles'),
+
     'Doctrine\\Common'                 => __DIR__.'/../vendor/doctrine-common/lib',
     'Doctrine\\Common\\DataFixtures'   => __DIR__.'/../vendor/doctrine-data-fixtures/lib',
     'Doctrine\\DBAL\\Migrations'       => __DIR__.'/../vendor/doctrine-migrations/lib',

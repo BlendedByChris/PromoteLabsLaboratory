@@ -1,6 +1,6 @@
 <?php
 
-namespace MyProject\MyBundle\Entity;
+namespace PromoteLabs\Laboratory\Entity;
 use FOS\UserBundle\Entity\User as BaseUser;
 
 /**
