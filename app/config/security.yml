@@ -1,0 +1,11 @@
+# app/config/security.yml
+security:
+    providers:
+        # the naming of a security provider is up to you, we chose "fos_userbundle"
+        fos_userbundle:
+            id: fos_user.user_manager
+
+    firewalls:
+        main:
+            form_login:
+                provider: fos_userbundle

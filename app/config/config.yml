@@ -1,0 +1,68 @@
+framework:
+    secret:  mkI0VPyplAjqyExvslQiUEuaXdhGQkwC
+    charset:       UTF-8
+    csrf_protection:
+        enabled: true
+    router:        { resource: "%kernel.root_dir%/config/routing.yml" }
+    validation:    { enabled: true, annotations: true }
+    templating:    { engines: ['twig'] } #assets_version: SomeVersionScheme
+    session:
+        default_locale: en
+        lifetime:       3600
+        auto_start:     false
+        name:           symfony
+
+## Twig Configuration
+twig:
+    debug:            %kernel.debug%
+    strict_variables: %kernel.debug%
+
+## Assetic Configuration
+assetic:
+    debug:          %kernel.debug%
+    use_controller: false
+    filters:
+        cssrewrite: ~
+        # closure:
+        #     jar: %kernel.root_dir%/java/compiler.jar
+        # yui_css:
+        #     jar: %kernel.root_dir%/java/yuicompressor-2.4.2.jar
+
+## Doctrine Configuration
+doctrine:
+    dbal:
+       default_connection:       default
+       connections:
+           default:
+               dbname:   laboratory
+               user:     root
+               password: 
+               logging:  %kernel.debug%
+    orm:
+      auto_generate_proxy_classes: %kernel.debug%
+      default_entity_manager:   default
+      entity_managers:
+          default:
+              connection: default
+              mappings:
+                  FOSUserBundle: ~
+                  PromoteLabsLaboratoryBundle: ~
+
+
+## Swiftmailer Configuration
+#swiftmailer:
+#    transport:  smtp
+#    encryption: ssl
+#    auth_mode:  login
+#    host:       smtp.gmail.com
+#    username:   xxxxxxxx
+#    password:   xxxxxxxx
+
+
+## FOS User Configuration
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    class:
+        model:
+            user: PromoteLabs\LaboratoryBundle\Entity\User
