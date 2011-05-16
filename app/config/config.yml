@@ -1,3 +1,6 @@
+imports:
+    - { resource: security.yml }
+
 framework:
     secret:  mkI0VPyplAjqyExvslQiUEuaXdhGQkwC
     charset:       UTF-8
@@ -31,13 +34,12 @@ assetic:
 ## Doctrine Configuration
 doctrine:
     dbal:
-       default_connection:       default
-       connections:
-           default:
-               dbname:   laboratory
-               user:     root
-               password: 
-               logging:  %kernel.debug%
+        driver: pdo_mysql
+        dbname:   laboratory
+        host: 127.0.0.1
+        user:     root
+        password: 
+        logging:  %kernel.debug%
     orm:
       auto_generate_proxy_classes: %kernel.debug%
       default_entity_manager:   default
